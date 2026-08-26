@@ -173,6 +173,11 @@
      unimatrix
      tty-clock
      lavat
+     spotify
+     discord
+     pokemon-colorscripts
+     ani-cli
+     tor-browser
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
