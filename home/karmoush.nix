@@ -15,6 +15,14 @@
     ".config/hypr".source = ../.config/hypr;
     ".config/kitty".source = ../.config/kitty;
     ".config/noctalia".source = ../.config/noctalia;
+
+    ".config/GIMP/3.0".source = ../.config/GIMP/3.0;
+
+    ".local/share/applications/org.gimp.GIMP.desktop".source =
+      ../.local/share/applications/org.gimp.GIMP.desktop;
+
+    ".local/share/icons/hicolor/photogimp.png".source =
+      ../.local/share/icons/hicolor/photogimp.png;
   };
 
   programs.home-manager.enable = true;

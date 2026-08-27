@@ -77,7 +77,7 @@
        tree
      ];
    };
-
+   services.flatpak.enable = true;
    programs.firefox.enable = true;
    nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile.
@@ -181,6 +181,10 @@
      pokemon-colorscripts
      ani-cli
      tor-browser
+     flatpak
+     bazaar
+     hyprshot     
+
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
