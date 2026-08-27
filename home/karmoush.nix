@@ -7,6 +7,8 @@
   home.stateVersion = "26.05";
 
   home.file = {
+    ".scripts".source = ../scripts;
+
     ".config/btop".source = ../.config/btop;
     ".config/cava".source = ../.config/cava;
     ".config/fastfetch".source = ../.config/fastfetch;
@@ -23,6 +25,8 @@
 
     ".local/share/icons/hicolor/photogimp.png".source =
       ../.local/share/icons/hicolor/photogimp.png;
+
+    "scripts".source = ../scripts;
   };
 
   programs.home-manager.enable = true;
