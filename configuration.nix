@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -19,6 +20,8 @@
 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  home-manager.users.karmoush = import ./home/karmoush.nix;
 
   networking.hostName = "karmoush"; # Define your hostname.
 
