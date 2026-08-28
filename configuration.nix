@@ -99,13 +99,13 @@ in
     zip
     p7zip
     rsync
-
+    wmctrl
     ripgrep
     fd
     fzf
     jq
     yq
-
+    gtk3
     tmux
     zsh
     starship
@@ -116,7 +116,7 @@ in
     shellcheck
     direnv
     nix-direnv
-
+    kdotool
     gcc
     gnumake
     cmake
@@ -130,7 +130,7 @@ in
     rustc
     cargo
     go
-
+  
     gdb
     strace
     ltrace

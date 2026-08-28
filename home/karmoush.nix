@@ -18,6 +18,18 @@
     ".config/kitty".source = ../.config/kitty;
     ".config/noctalia".source = ../.config/noctalia;
 
+    ".config/kdeglobals".source =
+      ../.config/kde/kdeglobals;
+
+    ".config/kwinrc".source =
+      ../.config/kde/kwinrc;
+
+    ".config/plasmarc".source =
+      ../.config/kde/plasmarc;
+
+    ".config/plasma-org.kde.plasma.desktop-appletsrc".source =
+      ../.config/kde/plasma-org.kde.plasma.desktop-appletsrc;
+
     ".config/GIMP/3.0".source = ../.config/GIMP/3.0;
 
     ".local/share/applications/org.gimp.GIMP.desktop".source =
@@ -25,6 +37,9 @@
 
     ".local/share/icons/hicolor/photogimp.png".source =
       ../.local/share/icons/hicolor/photogimp.png;
+
+    ".local/bin/karm-blue-layout.sh".source =
+      ../scripts/karm-blue-layout.sh;
 
     "scripts".source = ../scripts;
   };
