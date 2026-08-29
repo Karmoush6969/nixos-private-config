@@ -26,6 +26,8 @@
 
     ".config/plasmarc".source =
       ../.config/kde/plasmarc;
+    ".pki/nssdb".source =
+      ../.pki/nssdb;
 
     ".config/plasma-org.kde.plasma.desktop-appletsrc" = {
       source = ../.config/kde/plasma-org.kde.plasma.desktop-appletsrc;
