@@ -38,11 +38,13 @@ in
   # Time zone
   time.timeZone = "Africa/Tunis";
 
-
+  # Desktop
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.enable = true;
+
   # Wayland compositors
   programs.hyprland.enable = true;
+
   # Printing
   services.printing.enable = true;
 
@@ -54,6 +56,71 @@ in
 
   # Touchpad
   services.libinput.enable = true;
+
+  # ------------------------------------------------------------
+  # NVIDIA + AMD HYBRID GRAPHICS
+  # ------------------------------------------------------------
+
+  # Both GPUs are present:
+  # AMD Radeon 680M:
+  #   35:00.0 -> PCI:53@0:0:0
+  #
+  # NVIDIA RTX 4060 Mobile:
+  #   01:00.0 -> PCI:1@0:0:0
+  #
+  # PRIME offload keeps the AMD iGPU handling the desktop while
+  # allowing games/applications to use the RTX 4060 when requested.
+
+  services.xserver.videoDrivers = [
+    "amdgpu"
+    "nvidia"
+  ];
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+    # Use NVIDIA's open kernel module.
+    open = true;
+
+    # Required/recommended for Wayland.
+    modesetting.enable = true;
+
+    # NVIDIA settings application.
+    nvidiaSettings = true;
+
+    prime = {
+      offload.enable = true;
+      offload.enableOffloadCmd = true;
+
+      amdgpuBusId = "PCI:53@0:0:0";
+      nvidiaBusId = "PCI:1@0:0:0";
+    };
+  };
+
+  # ------------------------------------------------------------
+  # STEAM / GAMING
+  # ------------------------------------------------------------
+
+  programs.steam = {
+    enable = true;
+
+    # Enable the GameScope Steam session.
+    gamescopeSession.enable = true;
+
+    # Protontricks support.
+    protontricks.enable = true;
+  };
+
+  # GameMode service.
+  programs.gamemode.enable = true;
+
+  # GameScope.
+  programs.gamescope.enable = true;
 
   # User
   users.users.karmoush = {
@@ -77,8 +144,14 @@ in
   # Unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # System packages
+  # ------------------------------------------------------------
+  # SYSTEM PACKAGES
+  # ------------------------------------------------------------
+
   environment.systemPackages = with pkgs; [
+    # ----------------------------------------------------------
+    # Basic utilities
+    # ----------------------------------------------------------
     git
     curl
     wget
@@ -113,6 +186,9 @@ in
     bat
     zoxide
 
+    # ----------------------------------------------------------
+    # Development
+    # ----------------------------------------------------------
     shellcheck
     direnv
     nix-direnv
@@ -130,11 +206,14 @@ in
     rustc
     cargo
     go
-  
+
     gdb
     strace
     ltrace
 
+    # ----------------------------------------------------------
+    # Hardware / system diagnostics
+    # ----------------------------------------------------------
     pciutils
     usbutils
     lshw
@@ -144,6 +223,9 @@ in
 
     brightnessctl
 
+    # ----------------------------------------------------------
+    # Media
+    # ----------------------------------------------------------
     ffmpeg
     yt-dlp
     mpv
@@ -155,13 +237,34 @@ in
     grim
     slurp
 
-    steam
+    # ----------------------------------------------------------
+    # GAMING
+    # ----------------------------------------------------------
+
+    # Steam is enabled through programs.steam above.
+    # Keeping the package here would be redundant, so it is
+    # intentionally not listed a second time.
+
     lutris
     protonup-qt
+
+    # FPS / performance monitoring
     mangohud
-    gamemode
+
+    # Minecraft
     prismlauncher
 
+    # Vulkan diagnostics
+    vulkan-tools
+
+    # Windows gaming / compatibility
+    wineWowPackages.stable
+    winetricks
+
+    mgba
+    # ----------------------------------------------------------
+    # Virtualization
+    # ----------------------------------------------------------
     virt-manager
     qemu
     libvirt
@@ -169,6 +272,9 @@ in
     docker-compose
     podman
 
+    # ----------------------------------------------------------
+    # Disk / filesystem tools
+    # ----------------------------------------------------------
     gparted
     parted
     cryptsetup
@@ -176,6 +282,9 @@ in
     efibootmgr
     lsof
 
+    # ----------------------------------------------------------
+    # Desktop / Wayland
+    # ----------------------------------------------------------
     waypaper
     rofi
     noctalia-shell
@@ -192,10 +301,16 @@ in
     hyprlauncher
     hyprpaper
 
+    # ----------------------------------------------------------
+    # Terminal / fun
+    # ----------------------------------------------------------
     unimatrix
     tty-clock
     lavat
 
+    # ----------------------------------------------------------
+    # Applications
+    # ----------------------------------------------------------
     spotify
     discord
 
@@ -208,6 +323,7 @@ in
 
     hyprshot
 
+    # KDE applications
     kdePackages.dolphin
     kdePackages.ark
   ];
@@ -218,3 +334,4 @@ in
   # NixOS state version
   system.stateVersion = "26.05";
 }
+

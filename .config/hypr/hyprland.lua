@@ -221,6 +221,15 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 --screnshotting
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
+
+--gaps
+hl.bind(mainMod .. " + EQUAL", function()
+    os.execute("hyprctl keyword general:gaps_in $(( $(hyprctl getoption general:gaps_in -j | jq '.int') + 5 ))")
+end)
+
+hl.bind(mainMod .. " + MINUS", function()
+    os.execute("hyprctl keyword general:gaps_in $(( $(hyprctl getoption general:gaps_in -j | jq '.int') - 5 ))")
+end)
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------

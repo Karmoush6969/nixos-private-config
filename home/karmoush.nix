@@ -27,8 +27,10 @@
     ".config/plasmarc".source =
       ../.config/kde/plasmarc;
 
-    ".config/plasma-org.kde.plasma.desktop-appletsrc".source =
-      ../.config/kde/plasma-org.kde.plasma.desktop-appletsrc;
+    ".config/plasma-org.kde.plasma.desktop-appletsrc" = {
+      source = ../.config/kde/plasma-org.kde.plasma.desktop-appletsrc;
+      force = true;
+    };
 
     ".config/GIMP/3.0".source = ../.config/GIMP/3.0;
 
