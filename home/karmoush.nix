@@ -12,10 +12,6 @@
       force = true;
     };
 
-    ".pki/nssdb" = {
-      source = ../.pki/nssdb;
-      force = true;
-    };
 
     ".config/btop" = {
       source = ../.config/btop;
@@ -95,9 +91,3 @@
 
   programs.home-manager.enable = true;
 }
-:::
-
-Then run:
-
-```bash
-sudo nixos-rebuild switch
