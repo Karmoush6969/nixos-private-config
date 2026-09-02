@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Noctalia Shell
+Comment=Start Noctalia Shell with KDE Plasma
+Exec=noctalia-shell
+Terminal=false
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
+X-KDE-autostart-after=panel

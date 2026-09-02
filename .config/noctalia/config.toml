@@ -1,0 +1,5 @@
+[theme]
+mode = "dark"
+source = "custom"
+custom_palette = "BlackAndWhite"
+pure_black_dark = true

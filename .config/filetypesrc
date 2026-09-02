@@ -1,0 +1,6 @@
+[EmbedSettings]
+embed-application/json=false
+embed-application/zip=false
+embed-image/webp=false
+embed-text/plain=false
+embed-video/mp4=false

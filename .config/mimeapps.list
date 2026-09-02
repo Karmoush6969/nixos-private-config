@@ -1,0 +1,21 @@
+[Added Associations]
+application/json=kate-3.desktop;
+application/schema+json=code.desktop;
+application/x-shellscript=code.desktop;kitty-open.desktop;
+application/x-theme=code.desktop;
+application/zip=ark.desktop;
+image/webp=firefox-2.desktop;
+inode/directory=thunar.desktop;
+text/plain=kate-4.desktop;kate-2.desktop;kate.desktop;code.desktop;
+video/mp4=mpv-3.desktop;mpv-2.desktop;
+x-scheme-handler/file=thunar.desktop;
+
+[Default Applications]
+application/json=kate-3.desktop;
+application/x-theme=code.desktop
+application/zip=ark.desktop;
+image/webp=firefox-2.desktop;
+inode/directory=thunar.desktop
+text/plain=kate-4.desktop;
+video/mp4=mpv-3.desktop;
+x-scheme-handler/file=thunar.desktop

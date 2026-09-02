@@ -1,0 +1,4 @@
+[TimeZones]
+LocalZone=Africa/Tunis
+ZoneinfoDir=/etc/zoneinfo
+Zonetab=/etc/zoneinfo/zone.tab

@@ -1,0 +1,29 @@
+2026/08/31-00:26:53.289 a89 Reusing MANIFEST /home/karmoush/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2026/08/31-00:26:53.294 a89 Recovering log #85
+2026/08/31-00:26:53.295 a89 Reusing old log /home/karmoush/.config/discord/Local Storage/leveldb/000085.log 
+2026/08/31-00:32:17.459 a8a Level-0 table #89: started
+2026/08/31-00:32:17.520 a8a Level-0 table #89: 2200047 bytes OK
+2026/08/31-00:32:17.524 a8a Delete type=0 #85
+2026/08/31-00:36:54.126 a8a Level-0 table #91: started
+2026/08/31-00:36:54.128 a8a Level-0 table #91: 33175 bytes OK
+2026/08/31-00:36:54.129 a8a Delete type=0 #88
+2026/08/31-00:39:54.125 a8a Level-0 table #93: started
+2026/08/31-00:39:54.128 a8a Level-0 table #93: 35761 bytes OK
+2026/08/31-00:39:54.130 a8a Delete type=0 #90
+2026/08/31-00:39:54.130 a8a Compacting 4@0 + 2@1 files
+2026/08/31-00:39:54.179 a8a Generated table #94@0: 33 keys, 2175368 bytes
+2026/08/31-00:39:54.219 a8a Generated table #95@0: 84 keys, 2202956 bytes
+2026/08/31-00:39:54.220 a8a Compacted 4@0 + 2@1 files => 4378324 bytes
+2026/08/31-00:39:54.221 a8a compacted to: files[ 0 3 1 0 0 0 0 ]
+2026/08/31-00:39:54.221 a8a Delete type=2 #82
+2026/08/31-00:39:54.221 a8a Delete type=2 #83
+2026/08/31-00:39:54.221 a8a Delete type=2 #86
+2026/08/31-00:39:54.221 a8a Delete type=2 #89
+2026/08/31-00:39:54.221 a8a Delete type=2 #91
+2026/08/31-00:39:54.221 a8a Delete type=2 #93
+2026/08/31-00:47:54.126 a8a Level-0 table #97: started
+2026/08/31-00:47:54.128 a8a Level-0 table #97: 31803 bytes OK
+2026/08/31-00:47:54.130 a8a Delete type=0 #92
+2026/08/31-00:51:54.126 a8a Level-0 table #99: started
+2026/08/31-00:51:54.129 a8a Level-0 table #99: 48114 bytes OK
+2026/08/31-00:51:54.130 a8a Delete type=0 #96

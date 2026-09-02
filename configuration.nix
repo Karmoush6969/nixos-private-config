@@ -27,7 +27,6 @@ nix.settings.experimental-features = [
 "flakes"
 ];
 
-# Home Manager
 
 home-manager.users.karmoush = import ./home/karmoush.nix;
 
@@ -293,7 +292,7 @@ lshw
 lm_sensors
 smartmontools
 nvme-cli
-lunar-client
+labymod-launcher
 brightnessctl
 
 # ----------------------------------------------------------

@@ -1,0 +1,16 @@
+{
+  "SKIP_HOST_UPDATE": true,
+  "openH264Enabled": true,
+  "BACKGROUND_COLOR": "#121214",
+  "offloadAdmControls": true,
+  "DESKTOP_TTI_DNSTCP_WARMUP": true,
+  "chromiumSwitches": {},
+  "IS_MAXIMIZED": false,
+  "IS_MINIMIZED": false,
+  "WINDOW_BOUNDS": {
+    "x": 775,
+    "y": 52,
+    "width": 739,
+    "height": 790
+  }
+}

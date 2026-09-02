@@ -53,13 +53,13 @@ hl.config({
         col = {
             active_border = {
                 colors = {
-                    "rgb(5277C3)",
-                    "rgb(7EBBE3)",
+                    "rgb(F2F2F2)",
+                    "rgb(888888)",
                 },
                 angle = 45,
             },
 
-            inactive_border = "rgba(5277C388)",
+            inactive_border = "rgba(77777788)",
         },
 
         resize_on_border = false,
@@ -85,7 +85,7 @@ hl.config({
             enabled      = true,
             range        = 4,
             render_power = 3,
-            color        = "rgba(5277C344)",
+            color        = "rgba(FFFFFF44)",
         },
 
         blur = {
@@ -101,7 +101,6 @@ hl.config({
     },
 })
 
--- Faster window opening animation
 hl.animation({
     leaf = "windows",
     enabled = true,
@@ -159,7 +158,6 @@ hl.device({
 
 local mainMod = "SUPER"
 
--- Applications
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
@@ -169,44 +167,36 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 
--- Noctalia wallpaper selector
 hl.bind(
     "CTRL + SHIFT + RETURN",
     hl.dsp.exec_cmd("noctalia-shell ipc call wallpaper toggle")
 )
 
--- Focus
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
--- Move windows
 hl.bind("SHIFT + left",  hl.dsp.window.move({ direction = "left" }))
 hl.bind("SHIFT + right", hl.dsp.window.move({ direction = "right" }))
 hl.bind("SHIFT + up",    hl.dsp.window.move({ direction = "up" }))
 hl.bind("SHIFT + down",  hl.dsp.window.move({ direction = "down" }))
 
--- Workspaces
 for i = 1, 10 do
     local key = i % 10
     hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
     hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
--- Special workspace
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
--- Scroll workspaces
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
--- Move / resize windows
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Multimedia
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true, repeating = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true, repeating = true })
@@ -219,10 +209,9 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
---screnshotting
+
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
 
---gaps
 hl.bind(mainMod .. " + EQUAL", function()
     os.execute("hyprctl keyword general:gaps_in $(( $(hyprctl getoption general:gaps_in -j | jq '.int') + 5 ))")
 end)
@@ -230,6 +219,7 @@ end)
 hl.bind(mainMod .. " + MINUS", function()
     os.execute("hyprctl keyword general:gaps_in $(( $(hyprctl getoption general:gaps_in -j | jq '.int') - 5 ))")
 end)
+
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
@@ -255,7 +245,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name  = "move-hyprland-run",
+    name = "move-hyprland-run",
     match = { class = "hyprland-run" },
 
     move  = "20 monitor_h-120",
@@ -263,12 +253,11 @@ hl.window_rule({
 })
 
 -- >>> hyprland-infinite-desktop-v2 (auto-installed) START
--- mainMod detected/used: "SUPER"
-    hl.on("hyprland.start", function()
-        hl.exec_cmd("python3 ~/scripts/infinite_desktop_core.py 1.6 > /tmp/infinite-desktop.log 2>&1")
-    end)
 
--- Infinite desktop keybinds
+hl.on("hyprland.start", function()
+    hl.exec_cmd("python3 ~/scripts/infinite_desktop_core.py 1.6 > /tmp/infinite-desktop.log 2>&1")
+end)
+
 hl.bind("SUPER" .. " + Z", hl.dsp.focus({ workspace = "-1" }))
 hl.bind("SUPER" .. " + X", hl.dsp.focus({ workspace = "+1" }))
 hl.bind("SUPER" .. " + SHIFT + Z", hl.dsp.window.move({ workspace = "-1" }))
@@ -290,5 +279,5 @@ hl.bind("SUPER" .. " + down", hl.dsp.exec_cmd("python3 ~/scripts/navigate_window
 hl.bind("SUPER" .. " + ALT + J", hl.dsp.exec_cmd("python3 ~/scripts/move_window_tiled.py down"))
 hl.bind("SUPER" .. " + SHIFT + down", hl.dsp.exec_cmd("python3 ~/scripts/move_window.py down"), { repeating = true })
 hl.bind("SUPER" .. " + CTRL + down", hl.dsp.exec_cmd("python3 ~/scripts/resize_window.py down"), { repeating = true })
--- <<< hyprland-infinite-desktop-v2 (auto-installed) END
 
+-- <<< hyprland-infinite-desktop-v2 (auto-installed) END

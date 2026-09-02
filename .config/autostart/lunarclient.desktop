@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=lunarclient
+Comment=lunarclientstartup script
+Exec=/nix/store/3ajxfma0j70k8ad63wldgm3fa0ql6y5n-lunarclient-3.6.11-extracted/lunarclient --hidden
+StartupNotify=false
+Terminal=false

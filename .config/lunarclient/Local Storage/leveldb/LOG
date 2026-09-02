@@ -1,0 +1,21 @@
+2026/08/30-21:34:03.392 5235 Reusing MANIFEST /home/karmoush/.config/lunarclient/Local Storage/leveldb/MANIFEST-000001
+2026/08/30-21:34:03.401 5235 Recovering log #21
+2026/08/30-21:34:03.401 5235 Reusing old log /home/karmoush/.config/lunarclient/Local Storage/leveldb/000021.log 
+2026/08/30-21:34:16.279 5236 Level-0 table #25: started
+2026/08/30-21:34:16.283 5236 Level-0 table #25: 42470 bytes OK
+2026/08/30-21:34:16.285 5236 Delete type=0 #21
+2026/08/30-21:35:03.419 5236 Level-0 table #27: started
+2026/08/30-21:35:03.424 5236 Level-0 table #27: 40286 bytes OK
+2026/08/30-21:35:03.426 5236 Delete type=0 #24
+2026/08/30-21:35:03.427 5236 Compacting 4@0 + 1@1 files
+2026/08/30-21:35:03.437 5236 Generated table #28@0: 73 keys, 544589 bytes
+2026/08/30-21:35:03.437 5236 Compacted 4@0 + 1@1 files => 544589 bytes
+2026/08/30-21:35:03.438 5236 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/08/30-21:35:03.438 5236 Delete type=2 #18
+2026/08/30-21:35:03.439 5236 Delete type=2 #20
+2026/08/30-21:35:03.439 5236 Delete type=2 #22
+2026/08/30-21:35:03.439 5236 Delete type=2 #25
+2026/08/30-21:35:03.439 5236 Delete type=2 #27
+2026/08/30-21:45:05.871 5236 Level-0 table #30: started
+2026/08/30-21:45:05.875 5236 Level-0 table #30: 27868 bytes OK
+2026/08/30-21:45:05.877 5236 Delete type=0 #26
